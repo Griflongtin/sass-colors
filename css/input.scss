@@ -1,0 +1,91 @@
+@import "variables";
+@import "mixins";
+
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  @include border-box;
+}
+
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto !important;
+}
+$blue: #4D9DE0;
+$red: #B3001B;
+$gray: #292F36;
+$purple: #3A015C;
+
+$colors: (
+  blue: $blue,
+  red: $red,
+  gray: $gray,
+  purple: $purple
+);
+
+@each $color, $val in $colors {
+  .bg-#{$color}{
+    background-color: $val;
+  }
+  .bg-lt-#{$color}{
+    background-color: lighten($val, 25%);
+  }
+  .bg-drk-#{$color} {
+    background-color: darken($val, 25%);
+  }
+  .bg-blue-#{$color}{
+    background-color: mix($val, $blue, 65%);
+    max-height: 40px;
+  }
+  .bg-red-#{$color}{
+    background-color: mix($val, $red, 65%);
+    max-height: 40px;
+  }
+  .bg-gray-#{$color}{
+    background-color: mix($val, $gray, 65%);
+    max-height: 40px;
+  }
+  .bg-purple-#{$color}{
+    background-color: mix($val, $purple, 65%);
+    max-height: 40px;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper, .row {
+  @extend %clearfix;
+}
+
+
+[class*="bg-"] {
+  height: 125px;
+}
+
+[class*='column-'] {
+  float: left;
+  padding: 1em;
+  width: 90%;
+  min-height: 1px;
+  // margin-left: 2px;
+  // margin-right: 2px;
+}
+.column-4{
+  padding: 0;
+}
+@media #{$breakpoint-medium} {
+  .wrapper {
+    width: 95%;
+    max-width: $grid-max-width;
+    }
+  @for $i from 1 through $grid-columns {
+    .column-#{$i} {
+      width: 100% / $grid-columns * $i;
+    }
+  }
+}
