@@ -13,6 +13,9 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+body {
+  font-family: 'Fondamento', cursive; }
+
 img {
   width: auto;
   max-width: 100%;
@@ -117,6 +120,24 @@ img {
 .bg-tomato-tomato {
   background-color: #ff623e;
   max-height: 40px; }
+
+.left, .right {
+  font-size: 10px; }
+
+.right {
+  float: right; }
+
+.left {
+  float: left;
+  clear: both;
+  font-weight: 900; }
+
+.text-container {
+  margin-top: 5px; }
+
+.mix {
+  font-size: 10px;
+  margin-bottom: 5px; }
 
 .wrapper {
   width: 100%;

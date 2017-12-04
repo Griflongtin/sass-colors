@@ -9,6 +9,9 @@
   @include border-box;
 }
 
+body{
+  font-family: 'Fondamento', cursive;
+}
 
 img {
   width: auto;
@@ -53,6 +56,24 @@ $colors: (
     background-color: mix($val, $tomato, 65%);
     max-height: 40px;
   }
+}
+.left, .right {
+  font-size: 10px;
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+  clear: both;
+  font-weight: 900;
+}
+.text-container {
+  margin-top: 5px;
+}
+.mix {
+  font-size: 10px;
+  margin-bottom: 5px;
 }
 
 .wrapper {
